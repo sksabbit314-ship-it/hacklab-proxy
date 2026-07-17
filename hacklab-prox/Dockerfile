@@ -10,9 +10,7 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html/
 
-# storage ফোল্ডার তৈরি + পারমিশন (এখানে Error fix)
-RUN mkdir -p /var/www/html/storage && \
-    chown -R www-data:www-data /var/www/html && \
+RUN chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html && \
     chmod 777 /var/www/html/storage
 
